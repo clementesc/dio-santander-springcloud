@@ -5,7 +5,7 @@ Development for didactic purposes, not representing a suitable format for produc
 
 The Project that is part of Santander Bootcamp Fullstack Developer, promoted by [Santander](https://app.becas-santander.com/) and [Digital Innovation One](https://web.digitalinnovation.one/). Classes presented by [Oswaldo Neto](https://github.com/oswaldoneto).
 
-###Architecture layers
+### Architecture layers
 - Config-server
 - Service-discovery (Eureka)
 - Gateway API
@@ -13,10 +13,10 @@ The Project that is part of Santander Bootcamp Fullstack Developer, promoted by 
 
 ![architecture layers](architecture_layers.jpg)
 
-###Configuration repository
+### Configuration repository
 [Configuration repository for "config-server"](https://github.com/clementesc/dio-santander-springcloud-config)
 
-###Run order
+### Run order
 Services should, by choice, be started (bootRun) in this order:
 ```
 1. config-server
@@ -25,7 +25,7 @@ Services should, by choice, be started (bootRun) in this order:
 4. product-catalog
 5. shopping-cart
 ```
-###Some local environment URL for check 
+### Some local environment URL for check 
 
 [Config-server actuator status](http://localhost:8888/actuator/health)
 
@@ -36,7 +36,7 @@ Services should, by choice, be started (bootRun) in this order:
 [Eureka System status](http://localhost:9000)
 
 
-###Data load over gateway (load balanced)
+### Data load over gateway (load balanced)
 POST on http://localhost:8080/product
 
 Body:
@@ -58,17 +58,17 @@ Body:
 }
 ```
 
-###Data get over gateway (load balanced)
+### Data get over gateway (load balanced)
 GET on http://localhost:8080/product/1
 
 GET on http://localhost:8080/cart/123
 
-###Elasticsearch index info
+### Elasticsearch index info
 GET on http://localhost:9200/product
 
 GET on http://localhost:9200/cart
 
-###Microservice config check
+### Microservice config check
 GET on http://localhost:8888/product-catalog/default
 
 GET on http://localhost:8888/shopping-cart/default
